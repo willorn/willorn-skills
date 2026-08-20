@@ -1,4 +1,4 @@
 interface:
   display_name: "Truth of Thinking"
-  short_description: "Think with definition, classification, comparison, and cause."
-  default_prompt: "Use $truth-of-thinking to analyze this question with the four thinking actions."
+  short_description: "Define, classify, compare, cause — plus concept scenarios."
+  default_prompt: "Use $truth-of-thinking on this question. If it is a single concept, run the compact full loop with use/avoid scenarios; if it is a scene, reason inside the scene."

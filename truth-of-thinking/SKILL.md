@@ -1,6 +1,7 @@
 ---
 name: truth-of-thinking
-description: Apply the core framework of 《思考的真相》 to clarify concepts, analyze questions, make decisions, design workflows, or turn learning into reusable notes. Use when a user asks to define, classify, compare, analyze causes, reason about uncertainty or complex systems, create a checklist/SOP, or learn a concept through clear distinctions and real application.
+description: |
+  Apply the core framework of 《思考的真相》 to clarify concepts, reason about scenarios, make decisions, design workflows, or turn learning into reusable notes. Use when the user asks what something is (e.g. HashMap), wants more than a dictionary definition, needs when-to-use / when-not-to-use scenarios, asks to define, classify, compare, analyze causes, diagnose a situation, choose among options, create a checklist/SOP, or learn through clear distinctions and real application. Also trigger on /truth-of-thinking, 思考的真相, 定义分类比较因果, 场景推理, 什么时候用/不用.
 ---
 
 # Truth of Thinking
@@ -11,7 +12,7 @@ Use the four basic actions as the default thinking order:
 定义 -> 分类 -> 比较 -> 因果
 ```
 
-Do not add an elaborate framework before these four actions are clear. Decision, workflow, relationships, complex systems, analogy, and iteration are applications or extensions of the four actions.
+Do not add an elaborate framework before these four actions are clear. Decision, workflow, relationships, complex systems, analogy, iteration, and **scenario reasoning** are applications or extensions of the four actions — not a fifth replacement method.
 
 ## Core Actions
 
@@ -24,6 +25,7 @@ Write `concept = description`.
 - State the scope or perspective when a concept has multiple valid definitions.
 - Expand a term only when it remains ambiguous or blocks the next judgment; do not recursively define every familiar word.
 - Separate a definition from a goal, a standard, and an SOP.
+- Prefer an **operational** definition when possible: what it does, under what constraint, for what job — not only a textbook synonym.
 
 Use this output:
 
@@ -31,6 +33,7 @@ Use this output:
 Concept:
 Definition:
 Boundary / what it is not:
+Scope / perspective:
 Example and counterexample:
 ```
 
@@ -91,18 +94,77 @@ For uncertainty, use Bayesian thinking in plain language: new evidence may incre
 
 ### Understand a Concept
 
-Use this sequence:
+A single-concept question such as「什么是 HashMap？」「解释一下 X」is **not** finished when a dictionary definition is produced. A definition-only answer usually updates almost nothing reusable.
+
+#### Default: compact full loop in one reply
+
+Unless the user clearly asks for step-by-step tutoring / 跟练 / 一次只讲一点, run this compact loop in **one** answer:
 
 ```text
-Definition: What does it mean?
-Classification: What parts, types, or neighboring concepts exist?
-Comparison: What is it similar to and different from?
-Causality: What problem does it explain or solve, and why?
-Application: Where can it be used?
-Update: What new example, counterexample, or correction changes the model?
+1. Definition + boundary + scope
+2. Classification — name the standard first; one useful cut is enough
+3. Comparison — 1~3 neighboring concepts on shared criteria
+4. Causality — why it exists / why it works / when it degrades or fails
+5. Scenarios — when to use / when not to use (at least one of each when possible)
+6. Three-table update — what was created or changed
 ```
 
-Teach one unresolved distinction at a time unless the user requests a full overview. For ongoing learning, include a compact progress line showing completed concepts and the current concept.
+Keep it compact. Prefer depth on the distinctions that change judgment; do not pad every subsection equally.
+
+A dictionary synonym with no boundary, no neighbor comparison, no failure cause, and no use/avoid scenario counts as **incomplete** for this skill.
+
+#### Tutoring mode (optional)
+
+Use incremental teaching only when the user wants guided learning, says 一步步教 / 跟练 / 先别展开, or is clearly building the concept across turns. Then teach one unresolved distinction at a time and show a short progress line:
+
+```text
+已完成: ...
+当前: ...
+下一步候选: ...
+```
+
+#### Concept output skeleton
+
+```text
+【定义】
+【边界 / 不是什么】
+【分类】标准：...
+【比较】和谁比 / 比什么 / 结论
+【因果】为何有效；何时失效
+【场景】该用；不该用
+【三张表更新】概念表 / 关系表 / 流程表
+```
+
+See `references/concept-scenario-example.md` for a HashMap worked example.
+
+### Scenario Reasoning
+
+Scenario reasoning is in scope. It is the four actions applied to a concrete situation, not a separate theory.
+
+Common scenario types:
+
+| Type | User intent | Default path |
+|---|---|---|
+| Selection | Which tool / structure / option fits this case? | Define need → classify options → compare → choose |
+| Diagnosis | Why did this happen / why is it slow / wrong? | Define phenomenon → classify candidate causes → compare likelihood → causal four-question test |
+| Design / decision | What should we do under constraints? | Define goal and boundary → classify options/risks → compare → causal consequences → decide |
+| Application check | Can concept X be used here? | Define X and the scene → compare fit criteria → causal risks → use or avoid |
+
+For a bare concept question, include at least a light **application check**: one suitable scene and one unsuitable scene, with the reason tied back to definition, comparison, or causality.
+
+When the user already gives a scene, start from that scene. Do not retreat to an abstract glossary entry and stop there.
+
+Use this output when scenario reasoning is central:
+
+```text
+Scene:
+Goal / pain:
+Relevant concept(s) and boundaries:
+Options or cause candidates:
+Comparison or causal test:
+Conclusion: use / avoid / decide / next check:
+What updated in the three tables:
+```
 
 ### Make a Decision
 
@@ -162,13 +224,15 @@ Relationship table: judgment — how are things connected, different, or importa
 Workflow table: action — how is the task carried out?
 ```
 
-At the end of a learning or analysis task, state what was created, read, updated, or deleted in these tables. If none changed, the work likely produced no reusable learning.
+At the end of a learning, concept, or scenario task, state what was created, read, updated, or deleted in these tables. If none changed, the work likely produced no reusable learning.
 
 ## Response Discipline
 
 - Start with the relevant action, not a generic summary.
-- Keep teaching interactive and incremental when the user is learning; do not dump every section of this skill by default.
-- For a full analysis, explicitly show `Definition -> Classification -> Comparison -> Causality -> Decision/Workflow` so the reasoning order stays visible.
+- For「什么是 X」/ single-concept explain requests, default to the **compact full loop**; do not stop at a definition box.
+- Use incremental one-distinction teaching only in tutoring mode, or when the user asks to go slowly.
+- For scenario / diagnosis / selection questions, reason inside the scene; concept definitions serve the scene.
+- For a full analysis, explicitly show `Definition -> Classification -> Comparison -> Causality -> Scenario/Decision/Workflow` so the reasoning order stays visible.
 - Preserve the distinction between source facts, user preferences, inferences, and unresolved questions.
 - Do not claim a conclusion is certain when evidence is incomplete.
-
+- Prefer operational distinctions that change a later choice over encyclopedic completeness.

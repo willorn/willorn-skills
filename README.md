@@ -48,9 +48,10 @@
 定义 -> 分类 -> 比较 -> 因果
 ```
 
-适合澄清概念、做决策、设计流程 / SOP，或把学习沉淀成可复用笔记。决策、工作流、关系、类比、迭代都是这四个动作的应用或延伸，不另起一套花架子。
+适合澄清概念、做场景推理、做决策、设计流程 / SOP，或把学习沉淀成可复用笔记。面对「什么是 X」时，默认跑完定义→分类→比较→因果→该用/不该用，而不是只给词典定义。决策、工作流、关系、类比、迭代、场景推理都是这四个动作的应用或延伸。
 
-→ [SKILL.md](./truth-of-thinking/SKILL.md)
+→ [SKILL.md](./truth-of-thinking/SKILL.md)  
+→ [单概念 + 场景示例（HashMap）](./truth-of-thinking/references/concept-scenario-example.md)
 
 ---
 
