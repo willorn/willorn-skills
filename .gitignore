@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+
+# Python / local tooling
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+*.pyc
+.tmp/
+
+# Env and credentials — never commit secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*
+secrets*
+*secret*
+
+# Local agent / editor settings
+.claude/settings.local.json
+CLAUDE.md
+AGENTS.md

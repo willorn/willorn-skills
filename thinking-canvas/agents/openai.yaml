@@ -1,0 +1,4 @@
+interface:
+  display_name: "Thinking Canvas"
+  short_description: "Think with definition, classification, comparison, and cause."
+  default_prompt: "Use $thinking-canvas to analyze this question with the four thinking actions."
