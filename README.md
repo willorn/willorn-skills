@@ -18,7 +18,7 @@
 
 | 名字 | 一句话 |
 |---|---|
-| 🧠 [**thinking-canvas**](#-thinking-canvas) | 用「定义 → 分类 → 比较 → 因果」把概念、决策、流程想清楚 |
+| 🧠 [**truth-of-thinking**](#-truth-of-thinking) | 用「定义 → 分类 → 比较 → 因果」把概念、决策、流程想清楚 |
 
 ---
 
@@ -30,7 +30,7 @@
 帮我安装这个 skill：https://github.com/willorn/willorn-skills/tree/main/<skill-name>
 ```
 
-把 `<skill-name>` 换成你想装的那个，例如 `thinking-canvas`。Agent 会自己放到对应目录。
+把 `<skill-name>` 换成你想装的那个，例如 `truth-of-thinking`。Agent 会自己放到对应目录。
 
 你的 Agent 不支持 Skill 也没关系：把对应目录的 `SKILL.md` 全文下载下来，当成项目规则文件（或直接贴进对话）让 Agent 照着执行即可。
 
@@ -40,7 +40,7 @@
 
 <a id="-skills"></a>
 
-### 🧠 thinking-canvas
+### 🧠 truth-of-thinking
 
 用四个基本动作作为默认思考顺序：
 
@@ -50,7 +50,7 @@
 
 适合澄清概念、做决策、设计流程 / SOP，或把学习沉淀成可复用笔记。决策、工作流、关系、类比、迭代都是这四个动作的应用或延伸，不另起一套花架子。
 
-→ [SKILL.md](./thinking-canvas/SKILL.md)
+→ [SKILL.md](./truth-of-thinking/SKILL.md)
 
 ---
 

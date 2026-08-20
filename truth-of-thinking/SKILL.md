@@ -1,9 +1,9 @@
 ---
-name: thinking-canvas
+name: truth-of-thinking
 description: Apply the core framework of 《思考的真相》 to clarify concepts, analyze questions, make decisions, design workflows, or turn learning into reusable notes. Use when a user asks to define, classify, compare, analyze causes, reason about uncertainty or complex systems, create a checklist/SOP, or learn a concept through clear distinctions and real application.
 ---
 
-# Thinking Canvas
+# Truth of Thinking
 
 Use the four basic actions as the default thinking order:
 

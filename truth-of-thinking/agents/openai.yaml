@@ -1,0 +1,4 @@
+interface:
+  display_name: "Truth of Thinking"
+  short_description: "Think with definition, classification, comparison, and cause."
+  default_prompt: "Use $truth-of-thinking to analyze this question with the four thinking actions."
